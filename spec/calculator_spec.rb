@@ -25,5 +25,11 @@ RSpec.describe Calculator do
         expect(calculator.add('1,2')).to eq(3)
       end
     end
+
+    context 'when more than 2 numbers are passed' do
+      it 'returns the sum of the numbers' do
+        expect(calculator.add('1,2,3,4,5')).to eq(15)
+      end
+    end
   end
 end
