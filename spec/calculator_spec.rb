@@ -44,7 +44,7 @@ RSpec.describe Calculator do
       end
     end
 
-    context 'if a negative number is passed' do
+    context 'when a negative number is passed' do
       it 'raises an exception displaying the negative number' do
         expect {
           expect(calculator.add('1,-2'))
@@ -52,11 +52,18 @@ RSpec.describe Calculator do
       end
     end
 
-    context 'if multiple negative numbers are passed' do
+    context 'when multiple negative numbers are passed' do
       it 'raises an exception displaying the comma separated negative number' do
         expect {
           expect(calculator.add('1,-2,-3'))
         }.to raise_error(ArgumentError, 'negative numbers not allowed -2,-3')
+      end
+    end
+
+    # Extra points
+    context 'when a number greater than 1000 is passed' do
+      it 'ignores the number more than 1000 from sum' do
+        expect(calculator.add('1,1000')).to eq(1)
       end
     end
   end
