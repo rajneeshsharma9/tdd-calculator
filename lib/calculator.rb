@@ -13,6 +13,7 @@ class Calculator
       .map {|numbers| numbers.split(delimiter)}
       .flatten
       .map(&:to_i)
+      .reject {|number| number >= 1000}
 
     raise ArgumentError, "negative numbers not allowed #{numbers_array.select(&:negative?).join(',')}" if numbers_array.any?(&:negative?)
 
