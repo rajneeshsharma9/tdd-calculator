@@ -31,5 +31,11 @@ RSpec.describe Calculator do
         expect(calculator.add('1,2,3,4,5')).to eq(15)
       end
     end
+
+    context 'when new lines are present between numbers' do
+      it 'returns the sum of the numbers' do
+        expect(calculator.add('1,2\n3')).to eq(6)
+      end
+    end
   end
 end
