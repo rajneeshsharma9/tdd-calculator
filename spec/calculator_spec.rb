@@ -51,5 +51,13 @@ RSpec.describe Calculator do
         }.to raise_error(ArgumentError, 'negative numbers not allowed -2')
       end
     end
+
+    context 'if multiple negative numbers are passed' do
+      it 'raises an exception displaying the comma separated negative number' do
+        expect {
+          expect(calculator.add('1,-2,-3'))
+        }.to raise_error(ArgumentError, 'negative numbers not allowed -2,-3')
+      end
+    end
   end
 end
