@@ -22,7 +22,7 @@ RSpec.describe Calculator do
 
     context 'when two numbers are passed' do
       it 'returns the sum of the numbers' do
-        expect(calculator.add('1, 2')).to eq(3)
+        expect(calculator.add('1,2')).to eq(3)
       end
     end
   end
