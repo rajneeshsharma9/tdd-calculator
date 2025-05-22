@@ -37,5 +37,11 @@ RSpec.describe Calculator do
         expect(calculator.add('1,2\n3')).to eq(6)
       end
     end
+
+    context 'when delimiter is a speacial character' do
+      it 'returns the sum of the numbers' do
+        expect(calculator.add('//;\n1;2')).to eq(3)
+      end
+    end
   end
 end
